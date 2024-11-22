@@ -30,12 +30,11 @@ def is_gameover(word, attempts):
 
 
     
-    
+
 def play():
     word = choose_word()
     attemps= 5 
     guessed_letters= set()
-    print(word)
 
     while attemps >0:  
         
@@ -47,8 +46,9 @@ def play():
                 print("_", end=" ")
         
         if is_gameover(word, guessed_letters) :
-            print(f"\n Game Over ")
-            break         
+            print(f"\n You won ")
+            break    
+             
 
         letter=input(f"\nEnter letter [Attemps remaining {attemps}]: ")
         if letter in word:
@@ -56,7 +56,10 @@ def play():
             
         if letter not in word:
             attemps-=1
-                   
+         
+    if attemps<=0 :
+        print(f"\n\n!!!...Game Over...!!!\nCorrect word was : {word}\nTry again!!!")         
+
         
 def main():
     play()

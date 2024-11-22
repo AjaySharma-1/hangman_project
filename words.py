@@ -47,4 +47,4 @@ hard_words = [
 
 word_list = easy_words+ hard_words+ medium_words
 
-print(word_list)
+
